@@ -3,8 +3,8 @@ This is a simple Spring Boot Application helping us run a Spring Boot Project in
 
 ## Assumption 
 This assumes that you have a fair idea of what docker is and how containerization work. This
-also expects you have `docker` cli installed, and it is fully functional. Having a Java runtime
-is optional as it will be available inside the container.
+also expects you have `docker` cli installed, and it is fully functional. Having a JDK to create the `jar` file.
+
 
 ## Compile and Generate Artifacts
 To compile and generate artifacts to run.
@@ -20,7 +20,7 @@ To build and run the image
 ```shell
 docker-compose up -d
 ```
-To recreate the aimages after making changes to code and building new artifacts
+To recreate the images after making changes to code and building new artifacts
 ```shell
 docker-compose up -d --build
 ```
