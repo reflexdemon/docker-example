@@ -20,3 +20,9 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+bootJar {
+	archiveBaseName = 'docker-example'
+	archiveVersion = '1.0.0'
+	archiveFileName = 'docker-example.jar'
+}
