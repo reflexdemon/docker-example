@@ -1,0 +1,5 @@
+FROM adoptopenjdk:11-jdk
+EXPOSE 8080 5005
+ADD build/libs/docker-example.jar /app/
+WORKDIR /app
+CMD java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Djava.security.egd=file:/dev/./urandom -jar docker-example.jar
