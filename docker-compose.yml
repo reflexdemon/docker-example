@@ -1,19 +1,19 @@
 version: "3"
 services:
-  db:
-    image: mysql
+  db:                          # This is our database service container
+    image: mysql               # We choose what database to connect with their default commands
     command: --default-authentication-plugin=mysql_native_password
-    env_file:
+    env_file:                  # Choose our environment configuration used to start the container
       - .env
   docker-example:
     build:
       context: .
       dockerfile: Dockerfile
-    depends_on:
+    depends_on:                # We are basically telling docker, before starting this java service please start 'db' service
       - db
-    links:
+    links:                     # This enables the Network connection between the containers
       - db
     ports:
       - '8080:8080'
-    env_file:
+    env_file:                  # Choose our environment configuration used to start the container
       - .env
